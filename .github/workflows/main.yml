@@ -4,8 +4,11 @@ on:
     types: [started]
 
 jobs:
-  say_hello:
+  add_collaborator:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "${{ github.actor }}"
+      - uses: octokit/request-action@v2.x
+        with:
+          route: PUT /repos/helloRupa/{repo}/collaborators/{username}
+          repo: ${{ github.repository }}
+          username: ${{ github.actor }}
