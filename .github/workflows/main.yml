@@ -1,4 +1,4 @@
-name: Say Hello
+name: Add Collaborators
 on:
   watch:
     types: [started]
@@ -10,8 +10,9 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: add_collaborator
         with:
-          route: PUT /repos/helloRupa/just-testing-stuff/collaborators/{username}
-          repo: ${{ github.repository }}
+          route: PUT /repos/{repo-owner}/{repo-name}/collaborators/{username}
+          repo-owner: ${{ github.repository_owner }}
+          repo-name: ${{ github.event.repository.name }}
           username: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.ADD_COLLABORATOR }}
