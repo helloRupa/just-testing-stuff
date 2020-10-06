@@ -15,4 +15,4 @@ jobs:
           username: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.ADD_COLLABORATOR }}
-      - run: "echo results: ${{ steps.add_collaborator.outputs.data }}"
+
