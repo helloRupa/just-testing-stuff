@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: octokit/request-action@v2.x
         with:
-          route: PUT /repos/helloRupa/{repo}/collaborators/{username}
+          route: PUT /repos/{repo}/collaborators/{username}
           repo: ${{ github.repository }}
           username: ${{ github.actor }}
         env:
