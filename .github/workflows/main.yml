@@ -12,4 +12,4 @@ jobs:
           route: PUT /repos/helloRupa/{repo}/collaborators/{username}
           repo: ${{ github.repository }}
           username: ${{ github.actor }}
-          token: ${{ secrets.ADD_COLLABORATOR }}
+          GITHUB_TOKEN: ${{ secrets.ADD_COLLABORATOR }}
