@@ -1,10 +1,11 @@
 name: Say Hello
 on:
-  push
+  watch:
+    types: [started]
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello your person you!"
+        echo "${{ github.actor }}"
