@@ -13,4 +13,4 @@ jobs:
           repo: ${{ github.repository }}
           username: ${{ github.actor }}
         env:
-          super_secret: ${{ secrets.ADD_COLLABORATOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
