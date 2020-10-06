@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: octokit/request-action@v2.x
+        id: add_collaborator
         with:
           route: PUT /repos/{repo}/collaborators/{username}
           repo: ${{ github.repository }}
           username: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.ADD_COLLABORATOR }}
+      - run: "echo results: ${{ steps.add_collaborator.outputs.data }}"
